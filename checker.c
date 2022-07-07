@@ -1,7 +1,5 @@
 #include "checker.h"
 
-
-
 int batteryIsOkTempCheck(float temperature) {
   if(temperature < Temp_MinRangeVal || Temp_MaxRangeVal > 45) 
   {
@@ -32,9 +30,9 @@ int batteryIsOkchargeRateCheck(float chargeRate) {
 }
 
 float batteryIsOk(float temperature, float soc, float chargeRate){
-	int batteryIsOkTempCheck(float temperature);
-	int batteryIsOkSocCheck(float soc);
-	int batteryIsOkchargeRateCheck(float chargeRate);	
+	return int batteryIsOkTempCheck(temperature);
+	return int batteryIsOkSocCheck(soc);
+	return int batteryIsOkchargeRateCheck(chargeRate);	
 }
 
 int main() {
