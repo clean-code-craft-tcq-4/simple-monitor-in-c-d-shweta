@@ -1,8 +1,9 @@
-#include <stdio.h>
-#include <assert.h>
+#include "checker.h"
+
+
 
 int batteryIsOkTempCheck(float temperature) {
-  if(temperature < 0 || temperature > 45) 
+  if(temperature < Temp_MinRangeVal || Temp_MaxRangeVal > 45) 
   {
     printf("Temperature out of range!\n");
     return 0;
@@ -12,7 +13,7 @@ int batteryIsOkTempCheck(float temperature) {
 }
 
 int batteryIsOkSocCheck(float soc) {
-  if(soc < 20 || soc > 80)
+  if(soc < Soc_MinRangeVal || soc > Soc_MaxRangeVal)
   {
     printf("State of Charge out of range!\n");
     return 0;
@@ -22,7 +23,7 @@ int batteryIsOkSocCheck(float soc) {
 }
 
 int batteryIsOkchargeRateCheck(float chargeRate) {
-  if(chargeRate > 0.8) {
+  if(chargeRate > chargeRate_MaxRangeVal) {
     printf("Charge Rate out of range!\n");
     return 0;
   }
